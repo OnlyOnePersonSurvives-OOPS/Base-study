@@ -32,8 +32,44 @@ canvas element는 pahser 프레임워크에 의해 자동적으로 생성된다.
  1. preload, 2. create, 3. update
  -> 아직 와닿지 않지만 단계 거쳐가며 익숙해지기.
  
+---
+## 2. Scaling
 
-## 2. The Phaser scale object
+### The Phaser scale object
 * scaling -> 우리는 크기가 제각각인 스크린에서도 자동적으로 canvas의 크기가 조절되길 원한다.
 -> 이는 preload에서 배울테니 차근차근 알아보자
 
+~~~
+function preload() {
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+}
+~~~
+
+game.scale.**scaleMode**
+- NO_scale : 아무것도 scale되지 않는다.
+- EXACT_FIT
+- **SHOW_ALL** : 가로 세로 비율을 유지한 채 캔버스의 배율을 조정한다.
+- RESIZE
+- USER_SCALE
+
+game.scale.pageAlignHorizontally = true;
+game.scale.pageAlignVertically = true;
+- 수평, 수직 가로 정렬을 해준다.
+
+### canvas 배경 색 바꾸기
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+    
+---
+
+## 3. assets을 불러오고 화면에 출력하기
+
+### 공 만들기
+간단하다.
+~~~
+var ball;
+~~~
+끝
+변수설정
