@@ -73,3 +73,71 @@ var ball;
 ~~~
 끝
 변수설정
+
+preload에서 load한 뒤 create에서 화면에 추가하는 꼴
+
+~~~
+function preload() {
+    // ...
+    game.load.image('ball', 'img/ball.png');
+}
+~~~
+'ball' : asset의 이름 설정해주는 것
+'imgball.png' : 이미지 파일의 경로 작성
+
+~~~
+function create() {
+    ball = game.add.sprite(50, 50, 'ball');
+}
+~~~
+- x, y 좌표
+- asset 이름
+
+※ 참고 : ball.scale.setTo(0.05,0.05); sprite의 크기를 설정해준다.
+
+---
+
+## 4. 공 움직이기
+
+### 프레임마다 공의 위치 업데이트 하기
+Update 함수의 기능은 무엇인가?
+-> 이 함수안의 있는 코드들은 매 프레임마다 실행된다!
+
+~~~
+function update() {
+    ball.x += 1;
+    ball.y += 1;
+}
+~~~
+
+pure js와는 다르게 자취가 남지 않는다!
+
+---
+
+## 5. Physics
+
+### physics 추가하기
+phaser는 다음과 같은 physics를 제공한다.
+- **Arcade** ( 간단한 물리 법칙만 적용되면 되니 가벼운 엔진을 쓸 것이다. )
+- P2
+- Ninja
+- Box2D (상업용)
+
+create 함수 첫 줄에 다음과 같이 코드를 작성한다.
+~~~
+game.physics.startSystem(Phaser.Physics.ARCADE);
+~~~
+-> 우리의 게임에 물리 엔진을 initialize 한다.
+
+Phaser 객체 물리엔진은 기본적으로 활성화되지 않기 때문에 다음과 같은 코드를 추가한다.
+~~~
+game.physics.enable(ball, Phaser.Physics.ARCADE);
+~~~
+
+속도 설정은 다음과 같다.
+~~~
+ball.body.velocity.set(150, 150);
+~~~
+ball.x += 150
+ball.y += 150
+수치가 정확하게 맞진 않겠지만 다음과 같은 의미라 보면 된다.
