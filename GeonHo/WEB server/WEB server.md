@@ -24,8 +24,9 @@
 -> 핵 공격에도 견딜 수 있는 강인한 통신 시스템의 개발 필요성이 증가
 -> 그 결과 **인터넷** 탄생
 
-![screenshot_20171221-151714](https://user-images.githubusercontent.com/23310187/34244435-91eab306-e668-11e7-8063-735dff683bf8.png){:height="400px" width="200px"}
-<img src="./7730.jpeg" width="100" height="100">
+
+<img src="./7730.jpeg" width="50%" height="50%">
+
 통신 마비가 가장 우려돼
 
 핵에도 견딜 수 있는 통신 시스템의 필요성이 대두 → 인터넷 탄생 (중앙이 없음)
