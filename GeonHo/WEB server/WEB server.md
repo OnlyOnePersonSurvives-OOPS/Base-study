@@ -23,7 +23,7 @@
 -> 그 결과 **인터넷** 탄생
 
 
-<img src="./7730.jpeg" width="50%" height="50%">
+<img src="./7730.jpeg" width="65%" height="65%">
 ▲ 인터넷은 이처럼 중앙이 없다.
 통신장치 하나 - 전화국 하나의 역할
 점(통신장치) 중에 하나가 사라져도 나머지들이 그 역할을 수행할 수 있는 통신 시스템
@@ -89,6 +89,8 @@ ex) **GitHub**
 - settings > GitHub Pages > Source > Branch: main
 - 주소 링크 확인 후 접속.
 
+<img src = "./7777.jpeg" width = "65%" height = "65%">
+<img src = "./7778.jpeg" width = "65%" height = "65%">
 
 static web hosting -> html만을 웹 서버에 올리고 싶다면 (무료가 많음)
 dynamic web hosting -> PHP, Python, Ruby on rails 배운 뒤
