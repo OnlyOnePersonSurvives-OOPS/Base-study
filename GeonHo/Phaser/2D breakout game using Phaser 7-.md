@@ -97,3 +97,108 @@ ball.anchor.set(0.5);
 ~~~
 ball.body.velocity.set(150, -150);
 ~~~
+
+---
+
+
+## 8. GAME OVER!
+
+### 지는 조건
+
+공이 바닥에 떨어지면 지게 만들어야한다.
+
+우선 바닥의 충돌 조건을 없애보자
+
+~~~
+game.physics.arcade.checkCollision.down = false;
+~~~
+
+공이 좌우와 상단엔 부딪히는 것을 볼 수 있지만 바닥으로는 그대로 뚫고 지나간다.
+
+이젠 공이 바닥을 지났을 때 게임 종료가 되는 조건을 만들어보자
+~~~
+ball.checkWorldBounds = true;
+ball.events.onOutOfBounds.add(function(){
+    alert('Game over!');
+    location.reload();
+}, this);
+~~~
+
+**와닿지 않는 코드!!!**
+그러나 받아들여보자.
+
+우선 ball.checkWorldBounds = ture;는 공이 world(canvas)의 경계를 check할 수 있게끔 만들어 놓은 것이다.
+
+만약 ball이 bound를 넘었다면 다음과 같은 function이 실행되게끔 만든 것이다.
+
+this의 의미도 잘 모르겠다.
+
+---
+
+## 9. 벽돌 쌓기
+
+### Defining new variables
+
+변수는 다음과 같이 설정한다.
+~~~
+var bricks;
+var newBrick;
+var brickInfo;
+~~~
+bricks : group (brick들을 한꺼번에 묶어서 한번에 기능 추가하기 쉽다.)
+newBrick : loop가 돌 때마다 그룹에 추가된 새로운 brick
+brickInfo : 우리가 필요한 데이터를 저장해둘 곳
+
+### Rendering the brick image
+
+~~~
+game.load.image('brick', 'img/brick.png');
+~~~
+
+### Drawing the bricks
+
+우리는 initBrikcs라는 함수에서 벽돌 그리기를 관리할 것이다.
+
+~~~
+    function initBricks() {
+        birckInfo = {
+            width: 50,
+            height: 20,
+            count: {
+                row: 3,
+                col: 7
+            },
+            offset: {
+                top: 50,
+                left: 60
+            },
+            padding: 10
+        };
+    }
+~~~
+이러한 함수를 따로 작성해보자
+
+offset은 canvas로부터 얼마나 떨어져서 bricks를 그려내기 시작할 것인지를 의미하고
+padding은 brick간의 간격을 의미한다.
+
+initBricks 함수에 벽돌들을 다 한곳에 묶기 위한 bricks를 정의한다.
+
+~~~
+bricks = game.add.group();
+~~~
+
+이제 벽돌들을 하나씩 그려보자
+
+~~~
+for(c = 0; c < brickInfo.count.col; c++){
+    for(r = 0; r< brickInfo.count.row; r++){
+        brickX = c * (brickInfo.width + brickInfo.padding) + brickInfo.offset.left;
+        brickY = r * (brickInfo.height + brickInfo.padding) + brickInfo.offset.top;
+        newBrick = game.add.sprite(brickX, brickY, 'brick');
+        game.physics.enable(newBrick, Phaser.Physics.ARCADE);
+        newBrick.body.immovable = true;
+        newBrick.anchor(0.5);
+        bricks.add(newBrick);
+        }
+    }
+~~~
