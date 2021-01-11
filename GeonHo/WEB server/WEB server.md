@@ -57,7 +57,7 @@
 - **웹 브라우저**와 **웹 서버**
 인터넷으로 연결되어 있다.
 
-<img src = "./7752.jpeg"" width = "50%" height = "50%">
+<img src = "./7752.jpeg" width = "50%" height = "50%">
 
 웹 브라우저 → 웹 서버에게 [info.cern.ch/index.html](http://info.cern.ch/index.html) 정보를 줘!
 웹 서버 → index.html 파일을 찾고 그 정보(코드)를 전기적 신호로 웹 브라우저에게 준다.
@@ -92,6 +92,16 @@ ex) **GitHub**
 
 static web hosting -> html만을 웹 서버에 올리고 싶다면 (무료가 많음)
 dynamic web hosting -> PHP, Python, Ruby on rails 배운 뒤
+
+무료 웹 호스팅 사이트
+https://www.bitballoon.com/
+http://neocities.org/
+Amazon S3
+Google Cloud Storage
+Azure Blob
+
+
+
 
 
 ## 4. [웹서버 운영하기 - 생활코딩](https://opentutorials.org/course/3084/18892)
