@@ -57,35 +57,36 @@
 - **웹 브라우저**와 **웹 서버**
 인터넷으로 연결되어 있다.
 
+<img src = "./7752.jpeg"" width = "50%" height = "50%">
+
 웹 브라우저 → 웹 서버에게 [info.cern.ch/index.html](http://info.cern.ch/index.html) 정보를 줘!
-
-웹 서버 → 그 정보(코드)를 전기적 신호로 웹 브라우저에게 준다.
-
+웹 서버 → index.html 파일을 찾고 그 정보(코드)를 전기적 신호로 웹 브라우저에게 준다.
 웹 브라우저 → 그 정보(코드)를 해석하여 화면에 띄워준다. 
 
 클라이언트 → request → 서버
-
 클라이언트 ← response ← 서버
 
 ex) 게임 클라이언트, 채팅 클라이언트
 
 웹 브라우저는 논리적인, 추상적인 시스템
+웹 서버는 단지 **프로그램**
 
-웹 서버는 단지 프로그램
+**이해하는 것이 아니라 익숙해지는 것이다!!**
 
-이해하는 것이 아니라 익숙해지는 것이다.
 
-[웹호스팅 (github pages) - 생활코딩](https://opentutorials.org/course/3084/18891)
+## 3. [웹호스팅 (github pages) - 생활코딩](https://opentutorials.org/course/3084/18891)
 
-웹 호스팅
+웹 서버를 운영하려면 컴퓨터를 계속 켜둬야 함.
 
-Web Hosting : 웹 서버를 제공해주는 회사
+### 웹 호스팅
+**host** : 인터넷이 연결되어 있는 컴퓨터 한대 (웹서버를 운영하기 위한 컴퓨터)
+**hosting** 회사 : host를 빌려주는 업체
+ex) **GitHub**
 
-GitHub
+- Repository를 생성한다.
+- html 파일들을 업로드한다.
+- settings > GitHub Pages > Source
 
-Host : 인터넷에 연결되어 있는 컴퓨터
-
-Hosting : 인터넷에 접속되어 있는 컴퓨터를 제공하는 사업
 
 static web hosting (무료가 많음)
 
