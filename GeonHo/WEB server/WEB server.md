@@ -1,8 +1,8 @@
 ---
 
-# [WEB](https://opentutorials.org/course/3084/18889)
+# WEB
 
-## 1. 원시웹
+## 1. [원시웹](https://opentutorials.org/course/3084/18889)
 
 ### 웹의 역사
 
@@ -81,18 +81,20 @@ ex) 게임 클라이언트, 채팅 클라이언트
 ### 웹 호스팅
 **host** : 인터넷이 연결되어 있는 컴퓨터 한대 (웹서버를 운영하기 위한 컴퓨터)
 **hosting** 회사 : host를 빌려주는 업체
+**Web hostingY** : host의 목적이 **웹** 이라면
 ex) **GitHub**
 
 - Repository를 생성한다.
 - html 파일들을 업로드한다.
-- settings > GitHub Pages > Source
+- settings > GitHub Pages > Source > Branch: main
+- 주소 링크 확인 후 접속.
 
 
-static web hosting (무료가 많음)
+static web hosting -> html만을 웹 서버에 올리고 싶다면 (무료가 많음)
+dynamic web hosting -> PHP, Python, Ruby on rails 배운 뒤
 
-dynamic web hosting
 
-[웹서버 운영하기 - 생활코딩](https://opentutorials.org/course/3084/18892)
+## 4. [웹서버 운영하기 - 생활코딩](https://opentutorials.org/course/3084/18892)
 
 웹 서버 운영하기
 
