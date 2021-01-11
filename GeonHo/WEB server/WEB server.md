@@ -57,7 +57,7 @@
 - **웹 브라우저**와 **웹 서버**
 인터넷으로 연결되어 있다.
 
-<img src = "./7752.jpeg" width = "50%" height = "50%">
+<img src = "./7752.jpeg" width = "65%" height = "65%">
 
 웹 브라우저 → 웹 서버에게 [info.cern.ch/index.html](http://info.cern.ch/index.html) 정보를 줘!
 웹 서버 → index.html 파일을 찾고 그 정보(코드)를 전기적 신호로 웹 브라우저에게 준다.
