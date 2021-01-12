@@ -145,9 +145,9 @@ var bricks;
 var newBrick;
 var brickInfo;
 ~~~
-bricks : group (brick들을 한꺼번에 묶어서 한번에 기능 추가하기 쉽다.)
-newBrick : loop가 돌 때마다 그룹에 추가된 새로운 brick
-brickInfo : 우리가 필요한 데이터를 저장해둘 곳
+bricks : group (brick들을 한꺼번에 묶어서 한번에 기능 추가하기 쉽다.)  
+newBrick : loop가 돌 때마다 그룹에 추가된 새로운 brick  
+brickInfo : 우리가 필요한 데이터를 저장해둘 곳  
 
 ### Rendering the brick image
 
