@@ -21,4 +21,4 @@ MongoDB
 
 데이터베이스의 데이터를 어떻게 input하고 어떻게 output하는지 따져봐야 한다.
 
-<img src = "./crud.png">
+<img src = "./crud.png" width = "65%" height = "65%">
