@@ -161,7 +161,7 @@ game.load.image('brick', 'img/brick.png');
 
 ~~~
     function initBricks() {
-        birckInfo = {
+        brickInfo = {
             width: 50,
             height: 20,
             count: {
