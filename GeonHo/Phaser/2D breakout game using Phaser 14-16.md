@@ -12,6 +12,7 @@ game.load.spritesheet('ball', 'img/wobble.png', 20, 20);
 
 다음 그림과 같은 표현하고자 하는 애니메이션 frame이 다 들어가 있는 spritesheet를 가져올 것이다.
 
+<img src = 'img/wobble.png'>
 왜 첫번째 인자가 'wobble'이 아닌 'ball'인지는 모르겠다.
 
 셋, 네번째 인자는 spritesheet를 어떻게 자를것인지를 의미한다.
