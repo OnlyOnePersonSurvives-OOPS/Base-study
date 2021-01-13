@@ -48,3 +48,20 @@ function ballHitPaddle(ball, paddle) {
 }
 ~~~
 ball에다 wobble 애니메이션을 실행시킨다!
+
+
+### Tweens (벽돌 부드럽게 사라지게 만들기)
+
+animations은 외부의 sprites를 가져오는 형식이지만,  
+tweens는 게임 안에서 너비나 투명도를 부드럽게 조절한다.
+
+brick.kill(); 대신  
+
+~~~
+var killTween = game.add.tween(brick.scale);
+killTween.to({x:0,y:0}, 200, Phaser.Easing.Linear.None);
+killTween.onComplete.addOnce(function(){
+    brick.kill();
+}, this);
+killTween.start();
+~~~
