@@ -18,3 +18,4 @@ game.load.spritesheet('ball', 'img/wobble.png', 20, 20);
 셋, 네번째 인자는 spritesheet를 어떻게 자를것인지를 의미한다.
 
 다음 그림과같이 spritesheet가 잘라지고 0, 1, 2의 index가 부여된다.
+<img src = 'img/wobble_chopped.png'>
