@@ -1,1 +1,1 @@
-# (Git_Handbook)[https://guides.github.com/introduction/git-handbook/]
+# [Git_Handbook](https://guides.github.com/introduction/git-handbook/)
