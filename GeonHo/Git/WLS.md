@@ -41,7 +41,7 @@ flag: -
 
 ls -l (l: long) 길게 뽑아내라.
 
-clear
+clear (Ctrl + l)
 
 vim hello.c
 
@@ -80,3 +80,5 @@ git pull origin main
 
 파일을 만든 뒤 변경 사항 반영하기  
 
+config --global user.name  
+--global  폴더에 상관없이 commit 하는 사람은 김건호 이다.  
