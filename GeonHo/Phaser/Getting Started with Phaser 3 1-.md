@@ -93,6 +93,7 @@ OS X라면 [Git Tower](https://www.git-tower.com/)
 
 ## Part 5 - Hello World!
 
+0. 
 ~~~
 <!DOCTYPE html>
 <html lang="en">
@@ -156,8 +157,10 @@ OS X라면 [Git Tower](https://www.git-tower.com/)
 </html>
 ~~~
 
-1. <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
-페이저를 굳이 다운받지 않아도 된다.
+1. 페이저를 굳이 다운받지 않아도 된다.
+~~~
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+~~~
 
 2. 천국
 ~~~
@@ -170,3 +173,10 @@ function preload ()
     this.load.image('red', 'assets/particles/red.png');
 }
 ~~~
+
+---
+
+## Part 6 - The Phaser Examples
+
+### Online Phaser Examples
+
