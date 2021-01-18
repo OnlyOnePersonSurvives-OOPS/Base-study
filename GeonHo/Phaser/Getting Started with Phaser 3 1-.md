@@ -77,4 +77,17 @@ PHP 5.4.0의 CLI SAPI는 이미 만들어져 있는 웹서버를 제공한다.
 
 ---
 
-## Part 4 - Downloading Phaser
+## Part 4 - [Downloading Phaser](https://phaser.io/download/stable)
+
+### Can I just get a zip/tar file?
+
+가능하다. 깃헙은 repo전체를 zip 또는 tar로 파일 다운을 제공한다.  
+근데 git부터 배우고 와라.  
+phaser업데이트를 쉽게 제공해준다.  
+
+커맨드 라인을 통해 깃을 사용하는 법을 배울 생각이 없다면, 대신 쓸 수 있을 법한 좋은 어플리케이션이 몇 가지 있다.
+Windows라면 [SmartGIT](https://www.syntevo.com/)
+OS X라면 [Git Tower](https://www.git-tower.com/)
+
+### Part 5 - Hello World!
+
