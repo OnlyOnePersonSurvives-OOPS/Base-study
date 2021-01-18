@@ -33,3 +33,48 @@ static html을 만든다면, 드래그해도 상관 없다.
 
 ## Part2. Installing a web server
 
+### windows
+
+윈도우엔 하나의 exe 파일로부터 유명한 웹 기술인, 아파치. php, MySQL을 한군데 묶어 설치해주는 Bundle Installers가 많다.
+
+ex)
+**WAMP Server**
+Cesanta의 [Mongoose web server](https://cesanta.com)
+
+번들이 아닌경우
+[Microsoft IIS](https://www.iis.net/)
+[Apache](https://www.iis.net/
+
+**참고**: WAMP 서버를 사용한다면 IE11가 프리즈되는 현상이 일어날 수 있습니다. 이를 고치려면 이 사이트의 링크 (https://stijndewitt.wordpress.com/2014/01/10/apache-hangs-ie11/) 를 참고하세요. 
+
+### [파이썬을 이용한 간단한 웹서버](https://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python)
+
+파이썬은 간단한 내장 http서버를 가지고 있으며, 아무 로컬 폴더에서나 파일들을 처리할 수 있다.  
+
+### Node.js 기반의 http-server
+
+http서버는 단순하고 설치할 필요도 없는 node.js기반의 커맨드라인 http서버이다.  
+실제 프로덕션으로 사용할 만큼 강력하지만, 테스팅, 개인 개발, 학습 용도로도 쓰기에 충분하다.  
+정적 파일들을 로켓달린 거북이처럼 만들어주는 일도 가능하다.  
+[http-server](https://npmjs.org/package/http-server)
+
+### 만들어져 있는 php 서버
+
+PHP 5.4.0의 CLI SAPI는 이미 만들어져 있는 웹서버를 제공한다.  
+이것은 오직 개발 목적에 적절하고 모든 파일들을 순차적으로 처리하지만, html5 웹게임을 테스팅 하기에 충분하다.  
+한 줄의 커맨드 라인 호출로 실행할 수 있으며, 상세한 설명과 사용법은 [PHP 매뉴얼](https://npmjs.org/package/http-server)에 나와 있다.  
+
+어떻든, 파일들을 로컬에서 처리하는 것도 중요하다. PART3에선 어떤 IDE를 고를지 확인해보자.  
+
+---
+
+## Part3 - Choosing an Editor
+
+### Visual Studio Code
+가볍지만 강력한 소스코드 에디터이다.  
+기본적으로 JavaScript, TypeScript, Node.js를 제공하며 다른 언어들과 런타임에 대해서도 확장된 환경을 가지고 있다.  
+
+
+---
+
+## Part 4 - Downloading Phaser
