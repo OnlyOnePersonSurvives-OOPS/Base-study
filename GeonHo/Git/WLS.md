@@ -26,9 +26,34 @@ performance across OS file systems: WSL1 O, WSL2 X
 
 
 powershell 실행
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart (virtual machine 허용)
 
+https://docs.microsoft.com/ko-kr/windows/wsl/install-win10#step-6---install-your-linux-distribution-of-choice 6단계부터  
 
-
+sudo apt-get update 
 
 ## 2. Using git in WSL
+
+리눅스의 특징 - 뿌리: Unix (서버 개발 운영체제 중 하나)  
+모든 것을 키보드로 해결  
+
+flag: -
+
+ls -l (l: long) 길게 뽑아내라.
+
+clear
+
+vim hello.c
+
+wq (save and quit)
+
+vim : text editor
+
+gcc: c compiler
+gcc hello.c
+
+sudo apt-get install -y build-essential  
+모든 것에 대해서 yes를 해라.  
+
+[참고](http://linux-command.org/ko/build-essential.html)
+
