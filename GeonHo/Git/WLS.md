@@ -64,3 +64,19 @@ sudo apt-get install -y build-essential
 ---
 
 GitHub
+
+git init
+
+ls -al
+하면 .git 파일 생성
+
+
+git remote add origin 주소
+
+git pull origin main
+깃이 origin에서 가져올 것인데 그곳의  main branch에서 가져올 것이다.  
+
+이제 가져온 내용을 로컬에서 수정을하고 add commit push 할 것!
+
+파일을 만든 뒤 변경 사항 반영하기  
+
