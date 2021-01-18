@@ -45,15 +45,22 @@ clear
 
 vim hello.c
 
-wq (save and quit)
+wq (save and quit)  
 
-vim : text editor
+vim : text editor  
 
-gcc: c compiler
-gcc hello.c
+gcc: c compiler (순수하게 컴파일 해라) -> 디폴트로 실행가능한 파일이 a.out으로 생긴다.  
+gcc hello.c  
 
 sudo apt-get install -y build-essential  
-모든 것에 대해서 yes를 해라.  
+모든 것에 대해서 yes를 해라.   
 
-[참고](http://linux-command.org/ko/build-essential.html)
+[참고](http://linux-command.org/ko/build-essential.html)  
 
+./a.out : 실행해라!   
+
+./ : 현재 내가있는 폴더  
+
+---
+
+GitHub
