@@ -82,3 +82,39 @@ git pull origin main
 
 config --global user.name  
 --global  폴더에 상관없이 commit 하는 사람은 김건호 이다.  
+
+
+---
+
+The holy trinity of Git
+
+git add
+git commit
+git push
+
+ex)
+
+$ git add -A (내가 이런이런 변경된 파일들을 변경사항에 올리고 싶다.)
+$ git commit -m "New file added: add.c" 
+--- update change in the local repository ---
+
+commit 메세지가 굉장히 중요. vim을 쓰지 않으면 이를 다루기 까다로움
+
+$ git push origin master
+--- update change in the remote repository (aka. github) ---
+
+
+git을 쓴다 >> local computer/local repository 에서 작업한다.
+github을 쓴다. >> remote repository에서 작업한다.
+
+PATH=$PATH:폴더
+Bash
+기존의 PATH 뒤에 추가하고 싶은 폴더를 쓰면 된다. 윈도우에서는 폴더 사이의 구분자가 세미콜론(;)이지만 리눅스에서는 콜론(:)이다.
+
+2 실행 예시
+[root@localhost ~]# echo $PATH
+/usr/local/sbin:/bin:/usr/sbin:/usr/bin
+console
+[root@localhost ~]# PATH=$PATH:/home:/var
+[root@localhost ~]# echo $PATH
+/usr/local/sbin:/bin:/usr/sbin:/usr/bin:/home:/var
