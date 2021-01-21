@@ -180,3 +180,143 @@ platforms.create(750, 220, 'ground');
 refreshBody()는 우리가 static 물리체를 스케일링 했기 때문에, 물리계에게 우리가 변경한 점을 알려주는 것이다.(대충이정도로 알고있자. 바꿨으면 물리계에게 변경점을 알려줘야 한다.)  
 
 
+---
+
+## Part 5 - Ready Player One
+
+### Physics sprite
+
+~~~
+player = this.physics.add.sprite(100, 450, 'dude');
+
+player.setBounce(0.2);
+player.setCollideWorldBounds(true);
+~~~
+
+this.physics.add로 만들어진 sprite는 default로 physics object로 취급된다.  
+player.setBounce(0.2); -> 땅에 부딪히면 0.2degree 만큼 튀어오른다.  
+player.setCollideWorldBounds(true); -> player가 800x600만큼의 world 경계를 넘지 못하게 한다.  
+
+### Animations
+
+~~~
+this.anims.create({
+    key: 'left',
+    frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
+    frameRate: 10,
+    repeat: -1
+});
+~~~
+left 애니메이션은 0, 1, 2, 3 프레임을 이용하며 초당 10frame으로 움직인다.  
+repeat: -1 은 애니메이션을 반복하라는 것을 의미한다.  
+
+phaser 3의 애니메이션 매니저는 전역 시스템이다!  
+한번 애니메이션을 만들었으면 이는 다른 객체들에게도 적용 가능하다.  
+phaser 2와 다른점.
+
+
+---
+
+## Part 6 - Body Velocity: A world of physics
+
+Arcade Physics, Impact Physics, Matter.js Physics 중에서 우린 Arcade Physics를 다룰 것이다.  
+이는 가볍고 모바일 환경에서도 잘 적용된다.  
+
+물리 sprite를 만들면 이에는 body 속성이 부여된다.  
+이는 Arcade 물리체에 대한 레퍼런스이다.    
+이 속성은 phaser의 Arcade Physics 엔진 내에서 sprite가 가지는 물리 몸체를 나타낸다.  
+body는 활용할 수 있는 많은 속성과 메서드를 가지고 있다.  
+
+예로, sprite에 중력을 주고 싶으면 간단히,
+
+~~~
+player.body.setGravityY(300)
+~~~
+라고 설정하면 된다.  
+값이 클수록 물체가 더 무거워지고 빨리 낙하할 것이다.  
+
+
+이젠 플레이어가 플랫폼 위에서 움직일 수 있도록 충돌 조건을 줄 것이다.  
+
+~~~
+this.physics.add.collider(player, platforms);
+~~~
+
+이를 위해선 collider 객체를 만들어야 한다.  
+이 객체는 player와 platform가 부딪히거나 겹치는 것을 확인한다.  
+
+
+---
+
+## Part 7 - Controlling the player with the keyboard
+
+기존엔 이벤트 리스너를 사용했다. 그러나 여기선 이미 만들어진 키보드 매니저를 쓸 것이다!!!  
+이의 장점은 쓰기 쉽다는 것이다.  
+
+~~~
+cursors = this.input.keyboard.createCursorKeys();
+~~~
+
+create에 추가하자.  
+
+cursor object의 up, down, left, right (대표적) 속성을 쓸 것이다.  
+이제 update에 코드를 집어넣을 것이다.  
+
+~~~
+if (cursors.left.isDown)
+{
+    player.setVelocityX(-160);
+
+    player.anims.play('left', true);
+}
+else if (cursors.right.isDown)
+{
+    player.setVelocityX(160);
+
+    player.anims.play('right', true);
+}
+else
+{
+    player.setVelocityX(0);
+
+    player.anims.play('turn');
+}
+
+if (cursors.up.isDown && player.body.touching.down)
+{
+    player.setVelocityY(-330);
+}
+~~~
+
+왼쪽 방향키가 눌려지면 플레이어의 속도를 x축방향으로 160만큼 주고 'left' 애니메이션을 실행시킨다!  
+매 프레임마다 속도를 초기화하고 설정해서 정지, 움직임을 구현한다.  
+아무것도 눌려지지 않으면 속도를 0으로 설정하고 (멈춤) 'turn' 애니메이션 (정면 주시)를 실행한다!  
+
+
+### 점프하기
+
+윗 방향키가 눌림과 동시에 player.body가 지면에 닿아있는 조건에서만 가능해야 하기 때문에  
+player.body.touching.down이라는 조건을 추가한다!  
+
+
+---
+
+## Part 8 - Stardust
+
+stars라는 새 그룹을 만들 것이다.
+
+~~~
+stars = this.physics.add.group({
+    key: 'star',
+    repeat: 11,
+    setXY: { x: 12, y: 0, stepX: 70 }
+});
+
+stars.children.iterate(function (child) {
+
+    child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+
+});
+~~~
+
+cd..
