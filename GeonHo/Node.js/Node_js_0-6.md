@@ -130,3 +130,9 @@ response.end(queryData.id);
 HTML이라는 글자가 화면에 나온다.
 
 queryString에 따라 다른 결과를 만들어내는 App을 만들어 본 것이다.  
+
+참고
+__dirname: C:\Users\rjsgh\Desktop\web\node.js
+_url: /?id=HTML
+
+
