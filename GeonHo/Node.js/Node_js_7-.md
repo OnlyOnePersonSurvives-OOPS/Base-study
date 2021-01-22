@@ -81,5 +81,58 @@ console.log(args[2]); -> egoing
 
 ---
 
-## App
+## App - Not found 제작 구현
 
+~~~
+    console.log(url.parse(_url, true));
+~~~
+
+Url {
+  protocol: null,
+  slashes: null,
+  auth: null,
+  host: null,
+  port: null,
+  hostname: null,
+  hash: null,
+  search: '?id=CSS',
+  query: [Object: null prototype] { id: 'CSS' },
+  pathname: '/',
+  path: '/?id=CSS',
+  href: '/?id=CSS'
+}
+
+Url {
+  protocol: null,
+  slashes: null,
+  auth: null,
+  host: null,
+  port: null,
+  hostname: null,
+  hash: null,
+  search: null,
+  query: [Object: null prototype] {},
+  pathname: '/favicon.ico',
+  path: '/favicon.ico',
+  href: '/favicon.ico'
+}
+
+이런 결과가 나온다.
+
+path -> query string 포함
+pathname -> query string 제외한 나머지
+
+웹 브라우저와 웹 서버 사이 요청 응답이 잘 이뤄졌는지 알려주는 통신 약속  
+200(성공), 404(파일을 찾을 수 없다.) ....
+
+---
+
+## App - 홈페이지 구현
+
+pathname으로는 home과 각각의 페이지를 구분할 수 없다. (모두 '/')
+
+실습!!!
+
+---
+
+ 
