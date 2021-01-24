@@ -108,3 +108,132 @@ pm2 start main.js --watch
 
 pm2 log (문제점 및 에러를 화면에 바로바로 보여줌)
 
+
+---
+
+## HTML - form
+
+~~~
+<form action="http://localhost:3000/process_create">
+    <p><input type="text" name="title"></p>
+    <p>
+        <textarea name="description"></textarea>
+    </p>
+    <p>
+        <input type="submit">
+    </p>
+</form>
+~~~
+form태그 안에 있는 정보들을 action의 주소로 보내겠다!  
+아무거나 치고 제출했을 시  
+url: http://localhost:3000/process_create?title=hi&description=lorem
+query string이 만들어진다!!
+
+form 재정의  
+-> form안의 각각의 컨트롤에 사용자가 입력한 정보를 action속성이 가르키는 서버로 query string형태로 보내는 HTML의 기능!!  
+
+서버에서 data를 get할 땐!  
+/?id=~~ 쿼리스트링 사용  
+
+서버에서 data를 수정 삭제 할 땐!  
+url에 다 보이게 담으면 안됨!!  
+보이지 않는 방식으로 보내야 한다.  
+
+~~~
+<form action="http://localhost:3000/process_create" method='POST'>
+~~~
+결과!
+http://localhost:3000/process_create
+
+
+사람눈에 보이지 않는 방식으로 은밀하게 서버에 보낸다.  
+
+서버로부터 사용자가 데이터를 가져올 땐, method가 GET (or 생략)
+
+---
+
+## App - 글생성 UI 만들기
+
+실습!! 
+
+실제로 submit 눌렀을 때,  
+Query string parameters를 확인해볼 것!  
+
+## App - POST방식으로 전송된 데이터 받기
+
+post방식으로 전송된 데이터, Node.js안에선 어떻게 가져오는가  
+
+서버에 접속이 있을 때 마다, createServer에 콜백함수를 Node.js가 호출한다.  
+request, response 정보  
+
+~~~
+var qs = require('querystring');
+~~~
+
+~~~
+      var body = '';
+      request.on('data', function(data){
+        body += data;
+      })
+사용자가 보낸 data를 조각조각 받아서 body에 담겠다.  
+
+      request.on('end', function(){
+        var post = qs.parse(body);
+        console.log(post);
+      })
+body에 다 담으면 post에 그 body에 대한 쿼리스트링 정보를 담겠다.  
+~~~
+
+
+콘솔 창  
+{ title: 'ads', description: 'avds' }
+post.title, post.description을 쓰면 되겠지?  
+**정보의 객체화!!**
+
+---
+
+## App - 파일 생성과 리다이렉션  
+
+받은 data를 data directory안에 파일로 저장하는 법  
+
+~~~
+        fs.writeFile(`data/${title}`, description, 'utf8', function(err){
+          response.writeHead(200);
+          response.end('success');
+        })
+~~~
+
+redirection: 데이터를 제출한 사용자를 다른 페이지로 튕겨내는 것  
+
+~~~
+          response.writeHead(302, 
+            {Location: `/?id=${title}`});
+~~~
+302: redirection!!  
+
+---
+
+## App - 글 수정
+
+### 수정 링크 생성
+
+home, create 제외한 나머지엔
+~~~
+<a href="/update?id=${title}">update</a>
+~~~
+추가하기
+
+### 수정할 정보 전송
+
+form + read기능 필요  
+
+~~~
+          <p><input type="hidden" name="id" value=${title}></p>
+          <p><input type="text" name="title" placeholder="title" value=${title}></p>
+          <p>
+            <textarea name="description" placeholder="description">${description}</textarea>
+          </p>
+~~~
+
+
+
