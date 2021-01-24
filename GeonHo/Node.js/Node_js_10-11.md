@@ -235,5 +235,37 @@ form + read기능 필요
           </p>
 ~~~
 
+### 수수정할 내용 저장
 
+~~~
+        fs.rename(`data/${id}`, `data/${title}`, function(error){
+~~~
 
+---
+
+## App - 글 삭제
+
+### 삭제버튼 구현
+
+update하면 update 페이지로 가지만  
+delete 누르면 바로 삭제하고 싶음!  
+그러니 delete를 링크로 설정하면 잘못된 것  
+
+이것도 역시 get 방식이 아니라 post 방식으로 보낼 것이다!  
+
+~~~
+              <form action="delete_process" method="post">
+                <input type="hidden" name="id" value=${title}>
+                <input type="submit" value="delete">
+              </form>
+~~~
+
+### 삭제 기능 완성
+
+~~~
+        fs.unlink(`data/${id}`, function(){
+          response.writeHead(302,
+            {Location: `/`});
+          response.end();
+        })
+~~~
