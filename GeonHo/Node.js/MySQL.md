@@ -93,5 +93,24 @@ db.query(`SELECT * FROM topic WHERE id=?, [queryData.id], function(error2, topic
 실습!
 
 ---
+## 8. Join - 상세보기 구현
+## 9. Join - 글 생성 구현
+
+콤보박스
+~~~
+<select name="author">
+	<option value="1">egoing</option>
+	<option value="2">duru</option>
+	<option value="3">taeho</option>
+</select>
+
+~~~
+
+delete하고 create하면 id가 계속 늘어나는 현상 발생  
+
+---
+## 10. Join - 글 수정 구현
+selected!!
+---
 
 
