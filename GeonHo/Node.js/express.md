@@ -181,9 +181,99 @@ get방식 요청에만 filelist를 불러온다!
 
 ---
 
+## 11. 미들웨어 실행순서
 
-## 정적인 파일의 서비스
+application-level middleware
+third-party-level middleware
 
-정적인 사진 및 CSS를 express로 띄우기 
+app.use( 함수 등록 ) -> 함수는 미들웨어가 된다.  
+next()로 다음에 실행되어야 할 미들웨어를 실행할지 안할지 결정  
 
- 
+미들웨어 여러개 붙이기 가능  
+
+~~~
+app.use('~', function(){
+  console.log(~);
+  next()
+}, function(){
+  ~
+  next()
+})
+~~~
+첫번째 next()가 다음 function()을 호출한다. (순서대로 실행)  
+
+조건문을 통해 다음 미들웨어가 실행될지 말지를 결정한다.  
+next('route')와 next()의 차이  
+
+---
+
+## 12. 에러처리
+
+끝에
+~~~
+app.use(function(req, res, nest){
+  res.status(404).send("Sorry can't find that!");
+})
+~~~
+
+미들웨어는 순차적으로 실행되기 때문에, 끝까지 가서 못찾으면 이를 실행한다.  
+
+페이지가 없는 경우 에러 발생시키기  
+
+/page/nodejs 하면 페이지가 없음에도 결과가 나온다. (물론 description은 undefined)  
+
+~~~
+if(err){
+  next(err);
+}
+else{
+  ~~
+}
+~~~
+
+에러 출력 메세지 바꾸기
+
+404 밑에
+~~~
+app.use(function(err, req, res, next){
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+})
+~~~
+
+next()를 통해 전달받은 err 인자가 첫번째에 있다.  
+express에서는 인자 4개를 가진 미들웨어 -> err를 처리하기 위한 미들웨로 하자라는 약속이 있다.  
+
+---
+
+## 13. 라우터
+
+### 주소체계 변경
+
+express.Router
+
+app.get('/topic/create', ~)  
+다음에
+app.get('/topic/:pageId', ~)  
+를 해야 에러 없이 실행된다.  
+
+
+main.js
+~~~
+var topicRouter = require('./routes/topic');
+
+app.use('/topic', topicRouter);
+~~~
+/topic으로 시작하는 주소들에게 topicRouter라고 하는 이름의 미들웨어를 적용하겠다.  
+
+
+routes/topic.js
+~~~
+var express = require('express')
+var router = express.Router()
+
+
+**주의!!!**
+
+만약에 미들웨어를 썼다면 그 밑에다가  
+app.use('/topic', topicRouter);를 해줘야한다.  
