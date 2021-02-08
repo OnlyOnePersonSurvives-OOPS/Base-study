@@ -277,3 +277,38 @@ var router = express.Router()
 
 만약에 미들웨어를 썼다면 그 밑에다가  
 app.use('/topic', topicRouter);를 해줘야한다.  
+
+---
+
+## express generator
+
+npm install express-generator -g
+
+express -h
+
+express myapp
+-> 여러 파일들이 자동적으로 생성
+
+cd myapp
+-> npm install
+
+npm start
+-> localhost:3000 -> welcome to express
+
+이 기반으로 빠르게 프로젝트를 시작할 수 있다!
+
+---
+
+## 수업을 마치며
+
+공부할만한 것
+
+- Template engine: html을 직접 타이핑하는 것을 줄여주는 것
+ex) pug
+npm install pug --save
+using template engine with express
+
+- Database
+
+- Middleware
+Third-party middleware
