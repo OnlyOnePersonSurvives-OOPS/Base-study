@@ -155,3 +155,25 @@ req.session.save(function(){
 ~~~
 
 세션 스토어에 프로퍼티들을 반영한 후에 콜백 함수를 실행하도록 하는 것
+
+
+---
+
+## 수업을 마치며
+
+여전히 보안해야할 점은 많이 남아있음  
+http로 통신한다는 것 -> 누군가 우리의 통신 내용을 보고 있다는 것  
+
+app.use(session({
+	secure: true,
+	HttpOnly: true
+}))
+-> https로만 통신 가능하게 만든다.  
+
+-> js를 통해서 세션 쿠키를 감지할 수 없도록 만든다.  
+
+- 다중사용자 수용 서비스  
+
+- oauth: federation authentication -> 타사에게 인증을 맡김  
+자사는 회원의 식별자만을 유지  
+- passport.js 
